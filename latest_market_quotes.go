@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/shopspring/decimal"
-	"strconv"
 	"strings"
 	"time"
 )
@@ -17,12 +16,13 @@ type GetLatestMarketQuotesService struct {
 	convert string
 }
 
-func (s *GetLatestMarketQuotesService) ID(id int) *GetLatestMarketQuotesService {
-	s.id = strconv.Itoa(id)
+func (s *GetLatestMarketQuotesService) ID(ids ...int) *GetLatestMarketQuotesService {
+	s.id = strings.Replace(strings.Trim(fmt.Sprint(ids), "[]"), " ", ",", -1)
 	return s
 }
 
-func (s *GetLatestMarketQuotesService) Symbol(symbol string) *GetLatestMarketQuotesService {
+func (s *GetLatestMarketQuotesService) Symbol(symbols ...string) *GetLatestMarketQuotesService {
+	s.symbol = strings.Replace(strings.Trim(fmt.Sprint(symbols), "[]"), " ", ",", -1)
 	return s
 }
 
