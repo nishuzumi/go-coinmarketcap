@@ -1,0 +1,4 @@
+package: github.com/nishuzumi/go-coinmarketcap
+import:
+- package: github.com/shopspring/decimal
+  version: ^1.1.0
