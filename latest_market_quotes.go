@@ -66,17 +66,17 @@ func (s *GetLatestMarketQuotesService) Do(ctx context.Context, opts ...RequestOp
 
 type GetLatestMarketQuotesResponse struct {
 	Data map[string]struct {
-		ID                int       `json:"id"`
-		Name              string    `json:"name"`
-		Symbol            string    `json:"symbol"`
-		Slug              string    `json:"slug"`
-		CirculatingSupply int       `json:"circulating_supply"`
-		TotalSupply       int       `json:"total_supply"`
-		MaxSupply         int       `json:"max_supply"`
-		DateAdded         time.Time `json:"date_added"`
-		NumMarketPairs    int       `json:"num_market_pairs"`
-		CmcRank           int       `json:"cmc_rank"`
-		LastUpdated       time.Time `json:"last_updated"`
+		ID                int             `json:"id"`
+		Name              string          `json:"name"`
+		Symbol            string          `json:"symbol"`
+		Slug              string          `json:"slug"`
+		CirculatingSupply decimal.Decimal `json:"circulating_supply"`
+		TotalSupply       decimal.Decimal `json:"total_supply"`
+		MaxSupply         int             `json:"max_supply"`
+		DateAdded         time.Time       `json:"date_added"`
+		NumMarketPairs    int             `json:"num_market_pairs"`
+		CmcRank           int             `json:"cmc_rank"`
+		LastUpdated       time.Time       `json:"last_updated"`
 		Quote             map[string]struct {
 			Price            decimal.Decimal
 			Volume24h        decimal.Decimal `json:"volume_24h"`
