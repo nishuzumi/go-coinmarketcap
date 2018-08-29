@@ -41,11 +41,11 @@ func (s *GetLatestMarketQuotesService) Do(ctx context.Context, opts ...RequestOp
 		"convert": s.convert,
 	}
 
-	if s.id == "" {
+	if s.id != "" {
 		m["id"] = s.id
 	}
 
-	if s.symbol == "" {
+	if s.symbol != "" {
 		m["symbol"] = s.symbol
 	}
 
