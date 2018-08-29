@@ -38,10 +38,17 @@ func (s *GetLatestMarketQuotesService) Do(ctx context.Context, opts ...RequestOp
 	}
 
 	m := Params{
-		"id":      s.id,
-		"symbol":  s.symbol,
 		"convert": s.convert,
 	}
+
+	if s.id == "" {
+		m["id"] = s.id
+	}
+
+	if s.symbol == "" {
+		m["symbol"] = s.symbol
+	}
+
 	r.SetParams(m)
 
 	data, err := s.c.CallAPI(ctx, r, opts...)
