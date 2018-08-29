@@ -38,6 +38,7 @@ func (c *Client) parseRequest(r *Request, opts ...RequestOption) (err error) {
 	body := &bytes.Buffer{}
 	bodyString := r.Form.Encode()
 	header := http.Header{}
+	header.Set("X-CMC_PRO_API_KEY", c.APIKey)
 	if bodyString != "" {
 		header.Set("Content-Type", "application/x-www-Form-urlencoded")
 		body = bytes.NewBufferString(bodyString)

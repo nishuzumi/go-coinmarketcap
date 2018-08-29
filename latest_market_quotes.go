@@ -34,7 +34,7 @@ func (s *GetLatestMarketQuotesService) Convert(currencies ...Currency) *GetLates
 func (s *GetLatestMarketQuotesService) Do(ctx context.Context, opts ...RequestOption) (res *GetLatestMarketQuotesResponse, err error) {
 	r := &Request{
 		Method:   "GET",
-		Endpoint: "/v1/cryptocurrency/quotes/latest",
+		Endpoint: "v1/cryptocurrency/quotes/latest",
 	}
 
 	m := Params{
