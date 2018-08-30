@@ -22,12 +22,12 @@ func (s *GetLatestMarketQuotesService) ID(ids ...int) *GetLatestMarketQuotesServ
 }
 
 func (s *GetLatestMarketQuotesService) Symbol(symbols ...string) *GetLatestMarketQuotesService {
-	s.symbol = strings.Replace(strings.Trim(fmt.Sprint(symbols), "[]"), " ", ",", -1)
+	s.symbol = strings.ToUpper(strings.Replace(strings.Trim(fmt.Sprint(symbols), "[]"), " ", ",", -1))
 	return s
 }
 
 func (s *GetLatestMarketQuotesService) Convert(currencies ...Currency) *GetLatestMarketQuotesService {
-	s.convert = strings.Replace(strings.Trim(fmt.Sprint(currencies), "[]"), " ", ",", -1)
+	s.convert = strings.ToUpper(strings.Replace(strings.Trim(fmt.Sprint(currencies), "[]"), " ", ",", -1))
 	return s
 }
 
